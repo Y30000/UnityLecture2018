@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CCMove : MonoBehaviour {
     public float moveSpeed = 8f;
@@ -38,6 +39,7 @@ public class CCMove : MonoBehaviour {
 
     public GameObject healFX;
     bool isHealing = false;
+    bool isSloping = false;
     GameObject fx;
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
@@ -50,9 +52,22 @@ public class CCMove : MonoBehaviour {
                 Invoke("RemoveHealFX", 2.0f);       //(호출할 함수명, 일정시간 후)
             }
         }
+        Vector3 other = hit.collider.gameObject.GetComponent<Transform>().up;
+        Vector3 here = GetComponent<Transform>().up;
+  //      print(Vector3.Cross(Vector3.Cross(here, other), other).normalized);
+        if (Vector3.Angle(other, here) > GetComponent<CharacterController>().slopeLimit && !isSloping)
+        {
+            con.Move(Vector3.Cross(Vector3.Cross(here, other), other).normalized * 1/50f);
+            isSloping = true;
+        }
     }
     void RemoveHealFX()
     {
         isHealing = false;
+    }
+
+    private void FixedUpdate()
+    {
+        isSloping = false;
     }
 }
