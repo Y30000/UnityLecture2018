@@ -5,21 +5,20 @@ using UnityEngine;
 public class FireBullit : MonoBehaviour {
     public GameObject bullet;
     public GameObject tanPi;
-    public Transform bulletPos;
-    public Transform tanpiPos;
-    GameObject p;
+    Transform bulletPos;
+    Transform tanpiPos;
+    public transform parent;
+    GameObject g;
 
     // Update is called once per frame
     void Update () {
         if (Input.GetKey(KeyCode.Space))
         {
-            GameObject g;
             g = Instantiate(bullet, bulletPos.position, bulletPos.rotation);
-            g.GetComponentInChildren<Rigidbody>().AddForce(bulletPos.up * 1000);
-            Destroy(g, 10f);
+            Destroy(g , 10f);
+            g.GetComponentInChildren<Rigidbody>().AddForce(parent.localRotation * 1000);
 
-            g = Instantiate(tanPi, tanpiPos.position, tanpiPos.rotation);
-            Destroy(g, 10f);
+            Destroy(Instantiate(tanPi, tanpiPos.position, tanpiPos.rotation), 10f);
         }
 	}
 }

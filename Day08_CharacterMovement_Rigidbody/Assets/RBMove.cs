@@ -48,7 +48,7 @@ public class RBMove : MonoBehaviour {
         rb.MovePosition(rb.position + move);
     }
 
-    
+    /*
     private void OnCollisionStay(Collision collision)
     {
         if(collision.gameObject.name == "Step3")
@@ -67,5 +67,5 @@ public class RBMove : MonoBehaviour {
         Destroy(fx);
         isHealing = false;
     }
-
+    */
 }
