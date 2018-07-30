@@ -12,9 +12,9 @@ public class FirstPersonController : MonoBehaviour {
     Vector3 moveDirection = Vector3.zero;
 
     Rigidbody rb;
-    bool isHealing = false;
+ //   bool isHealing = false;
     private bool grounded = false;
-    private GameObject fx;
+ //   private GameObject fx;
     Transform cameraTransform;
     float verticalLookRotation = 0;
 
