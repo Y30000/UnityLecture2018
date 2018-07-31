@@ -3641,7 +3641,7 @@ MonoBehaviour:
   fireRate: 10
   muzzleFlash: {fileID: 1893798582}
   impactFX: {fileID: 1532661308797260, guid: 10d988b4a9d67b44cbd83d9f322f4cf1, type: 2}
-  bulletHolePrefab: {fileID: 1538160614055228, guid: 0024136193a0ed24eacab2b39f95f10c,
+  bulletHolePrefab: {fileID: 1938705549501644, guid: 4e605f6523fd3e0498a734dcb729b862,
     type: 2}
 --- !u!1 &1833044333
 GameObject:

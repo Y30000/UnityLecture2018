@@ -56,10 +56,12 @@ public class Gun : MonoBehaviour {
 
     private void MakeBulletHole(Vector3 point, Vector3 normal, Transform parent)
     {
-        //GameObject clone = Instantiate(bulletHolePrefab, point + normal * 0.02f, Quaternion.FromToRotation(-Vector3.forword,normal));   
-        GameObject clone = Instantiate(bulletHolePrefab, point + normal * 0.02f, Quaternion.FromToRotation(Vector3.up,normal));   //-z 축이 노말과 일치되도록
+        GameObject clone = Instantiate(bulletHolePrefab, point + normal * 0.02f, Quaternion.FromToRotation(-Vector3.forward,normal));
+        GameObject cloneSec = clone;
+        print(cloneSec.Equals(clone));
 
         clone.transform.SetParent(parent.transform, true);
+        print(cloneSec.Equals(clone));
         clone.layer = 0;
       
     }
