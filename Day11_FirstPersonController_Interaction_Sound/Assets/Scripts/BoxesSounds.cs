@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletSound : MonoBehaviour {
+public class BoxesSounds : MonoBehaviour {
 
     private AudioSource audioSource;
     public AudioClip[] sound;
+    private AudioClip soundClip;
 
     // Use this for initialization
     private void Start()
@@ -15,9 +16,9 @@ public class BulletSound : MonoBehaviour {
     // Update is called once per frame
     public void PlaySound()
     {
-        int index = Random.Range(0, sound.Length -1);
-        audioSource.clip = sound[index];
+        int index = Random.Range(0, sound.Length);
+        soundClip = sound[index];
+        audioSource.clip = soundClip;
         audioSource.Play();
     }
 }
-

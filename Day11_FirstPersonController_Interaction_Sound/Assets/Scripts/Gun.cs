@@ -13,6 +13,9 @@ public class Gun : MonoBehaviour
     public GameObject impactFX;
     public GameObject bulletHolePrefab;
 
+    public float explosionRadius = 50f;
+    public float explosionPower = 1000f;
+
     Camera fpsCamera;
     float nextTimeToFire = 0f;
     Vector3 originPos;
@@ -31,8 +34,29 @@ public class Gun : MonoBehaviour
             nextTimeToFire = Time.time + 1 / fireRate;
             Shoot();
         }
-
+        else if (Input.GetMouseButtonDown(1))
+        {
+            nextTimeToFire = Time.time + 1 / fireRate * 10;
+            Explosion();
+        }
         transform.localPosition = Vector3.SmoothDamp(transform.localPosition, originPos, ref smoothVel, 0.1f);      //매 10%씩 ruf의 마지막 파라
+    }
+
+    void Explosion()
+    {
+        RaycastHit hitObj;
+        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hitObj, 200f))
+        {
+            Vector3 explosionPos = hitObj.point;
+            Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius);
+            foreach (Collider hit in colliders)
+            {
+                Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+                if (rb != null)
+                    rb.AddExplosionForce(explosionPower, explosionPos, explosionRadius, 3.0F);
+            }
+        }
     }
 
     private void Shoot()
@@ -49,14 +73,16 @@ public class Gun : MonoBehaviour
             if (hit.rigidbody != null)
                 hit.rigidbody.AddForce(fpsCamera.transform.forward * 500f);
 
-            //      BulletSound bs = hit.transform.GetComponent<AudioSource>();
-            //      if(bs != null)
-            //        bs.Play();
+            MakeBulletHole(hit.point, hit.normal, hit.transform);
+
+            BulletSound bs = hit.transform.GetComponent<BulletSound>();
+            if(bs != null)
+                bs.PlaySound();
         }
 
         Destroy(Instantiate(impactFX, hit.point, Quaternion.identity), 0.3f);
 
-        MakeBulletHole(hit.point, hit.normal, hit.transform);
+            
 
         transform.localPosition -= Vector3.forward * UnityEngine.Random.Range(0.07f, 0.3f);
 
@@ -96,6 +122,8 @@ public class Gun : MonoBehaviour
         child.rotation = Quaternion.LookRotation(-normal, child.transform.up);
        
         clone.layer = 0;
+
+        Destroy(clone, 10f);
     }
 
     void OffMuzzleFlash()
