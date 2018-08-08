@@ -8,6 +8,7 @@ public class FirstPersonController : MonoBehaviour {
     public float jumpForce = 250f;
     public float mouseSensitivityX = 2;
     public float mouseSensitivityY = 2;
+    public float rotateSeSensitivity = 2;
 
     Vector3 moveDirection = Vector3.zero;
 
@@ -18,6 +19,7 @@ public class FirstPersonController : MonoBehaviour {
     Transform cameraTransform;
     Transform CameraGizmoTransform;
     float cameraDistance;
+    float horizontalLookRotation = 0;
     float verticalLookRotation = 0;
 
     // Use this for initialization
@@ -25,9 +27,12 @@ public class FirstPersonController : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         cameraTransform = GetComponentInChildren<Camera>().transform;   //아래 모두 훝어봄 //손자이하는 안봄
-        CameraGizmoTransform = cameraTransform.GetComponentInParent<Transform>();
+        CameraGizmoTransform = cameraTransform.parent;
+        /*
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        */
+        print(CameraGizmoTransform.name);
     }
 
     // Update is called once per frame
@@ -48,18 +53,52 @@ public class FirstPersonController : MonoBehaviour {
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        moveDirection = (new Vector3(h, 0, v)).normalized;
-        moveDirection *= moveSpeed;
+
+        if (Input.GetMouseButton(0))
+        {
+            moveDirection = Vector3.forward * v * moveSpeed;
+            transform.Rotate(Vector3.up, h * rotateSeSensitivity);
+
+            horizontalLookRotation = Input.GetAxis("Mouse X") * mouseSensitivityX;
+            verticalLookRotation = Input.GetAxis("Mouse Y") * mouseSensitivityY;
+            verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90, 90);
+            //verticalLookRotation = Mathf.Clamp(verticalLookRotation + Input.GetAxis("Mouse Y") * mouseSensitivityY, -30, 30);
+
+            CameraGizmoTransform.eulerAngles = CameraGizmoTransform.eulerAngles + Vector3.right * -verticalLookRotation + Vector3.up * horizontalLookRotation;       //부모관점에서 회전함
+            CameraGizmoTransform.Rotate(Vector3.up, -h * rotateSeSensitivity);
+            //CameraGizmoTransform.Rotate(0, horizontalLookRotation, 0);
+            //CameraGizmoTransform.Rotate(-verticalLookRotation, 0, 0);
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            moveDirection = (new Vector3(h, 0, v)).normalized;
+            moveDirection *= moveSpeed;
+
+            horizontalLookRotation = Input.GetAxis("Mouse X") * mouseSensitivityX;
+            verticalLookRotation = Input.GetAxis("Mouse Y") * mouseSensitivityY;
+            verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90, 90);
+            CameraGizmoTransform.eulerAngles = CameraGizmoTransform.eulerAngles + Vector3.right * -verticalLookRotation + Vector3.up * horizontalLookRotation;       //부모관점에서 회전함
+            if (moveDirection != Vector3.zero)
+            {
+                transform.Rotate(Vector3.up, CameraGizmoTransform.localRotation.y*360);
+                CameraGizmoTransform.Rotate(Vector3.up,Vector3.Angle())
+            }
+        }
+        else
+        {
+            moveDirection = Vector3.forward * v * moveSpeed;
+            transform.Rotate(Vector3.up, h * rotateSeSensitivity);
+            if(moveDirection != Vector3.zero)
+                CameraGizmoTransform.localRotation = Quaternion.Lerp(CameraGizmoTransform.localRotation,Quaternion.identity, .05f);
+        }
         //       transform.LookAt(transform.position + moveDirection);
-  //      print("Mouse X " + Input.GetAxis("Mouse X"));
+        //      print("Mouse X " + Input.GetAxis("Mouse X"));
 
-        transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * mouseSensitivityX);      //mouseSensitivityX 감도
-        verticalLookRotation += Input.GetAxis("Mouse Y") * mouseSensitivityY;
-        verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90, 90);
-        //verticalLookRotation = Mathf.Clamp(verticalLookRotation + Input.GetAxis("Mouse Y") * mouseSensitivityY, -30, 30);
+        //CameraGizmoTransform.localEulerAngles = Vector3.up * Input.GetAxis("Mouse X") * mouseSensitivityX;      //mouseSensitivityX 감도
 
-        cameraTransform.localEulerAngles = Vector3.right * -verticalLookRotation;       //부모관점에서 회전함
         
+
+        /*
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (Cursor.lockState == CursorLockMode.Locked)
@@ -68,7 +107,7 @@ public class FirstPersonController : MonoBehaviour {
                 Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = !Cursor.visible;
         }
-       
+       */
     }
 
     private void FixedUpdate()

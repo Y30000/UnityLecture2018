@@ -585,7 +585,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 58733117}
   m_LocalRotation: {x: 0.21643952, y: -0, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: 0, y: 2, z: -4.28}
+  m_LocalPosition: {x: 0, y: 2.15, z: -4.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1542387034}
@@ -4827,6 +4827,7 @@ MonoBehaviour:
   jumpForce: 300
   mouseSensitivityX: 2
   mouseSensitivityY: 2
+  rotateSeSensitivity: 2
 --- !u!54 &1416554264
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4963,7 +4964,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1416554262}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fefdfc7920da07499c763b00d510dc5, type: 3}
   m_Name: 
@@ -4976,7 +4977,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1416554262}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 847f5563f2fc7944badc8a92caa21aac, type: 3}
   m_Name: 
