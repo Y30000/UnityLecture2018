@@ -80,16 +80,18 @@ public class FirstPersonController : MonoBehaviour {
             CameraGizmoTransform.eulerAngles = CameraGizmoTransform.eulerAngles + Vector3.right * -verticalLookRotation + Vector3.up * horizontalLookRotation;       //부모관점에서 회전함
             if (moveDirection != Vector3.zero)
             {
-                transform.Rotate(Vector3.up, CameraGizmoTransform.localRotation.y*360);
-                CameraGizmoTransform.Rotate(Vector3.up,Vector3.Angle())
+                transform.eulerAngles = new Vector3( transform.eulerAngles.x , transform.eulerAngles.y +CameraGizmoTransform.localEulerAngles.y, transform.eulerAngles.z);
+                //transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + CameraGizmoTransform.localEulerAngles.y, transform.eulerAngles.z);
             }
         }
         else
         {
             moveDirection = Vector3.forward * v * moveSpeed;
             transform.Rotate(Vector3.up, h * rotateSeSensitivity);
-            if(moveDirection != Vector3.zero)
-                CameraGizmoTransform.localRotation = Quaternion.Lerp(CameraGizmoTransform.localRotation,Quaternion.identity, .05f);
+            if (moveDirection != Vector3.zero)
+            {
+                CameraGizmoTransform.localRotation = Quaternion.Lerp(CameraGizmoTransform.localRotation, Quaternion.identity, .05f);
+            }
         }
         //       transform.LookAt(transform.position + moveDirection);
         //      print("Mouse X " + Input.GetAxis("Mouse X"));
