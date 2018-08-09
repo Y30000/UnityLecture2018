@@ -131,6 +131,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
+
+            if (Input.GetMouseButtonDown(0) && Physics.Raycast(transform.position, transform.forward,out hitInfo, 400f)) {
+                Animator anim = hitInfo.collider.GetComponent<Animator>();
+                if (anim != null)
+                    anim.SetBool("isDamage", true);
+                print(hitInfo.collider.name);
+                Debug.DrawRay(transform.position, transform.forward, Color.magenta, 1f);
+            }
         }
 
 
