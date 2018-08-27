@@ -14,7 +14,7 @@ public class HitReaction : MonoBehaviour {
 
     public void TakeDamage(int amount , string reactionType ,Vector3 knuckBackDir)
     {
-        if (anim != null)
+        if (anim != null && !anim.GetCurrentAnimatorStateInfo(0).IsName("MoveAround"))
             anim.SetTrigger(reactionType);
 
         GetComponent<Health>().DecreaseHP(amount);
