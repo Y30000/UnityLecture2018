@@ -27,7 +27,7 @@ public class HitBox : MonoBehaviour {
 
     private void OnDrawGizmos() //디버그용 Scens에서 호출됨
     {
-        //UpdateHitBox();
+        UpdateHitBox();
         CheckedGizmoColor();
         Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.DrawCube(hitBox.center, hitBox.size);

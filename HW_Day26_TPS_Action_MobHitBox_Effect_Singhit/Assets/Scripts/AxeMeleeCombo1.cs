@@ -5,7 +5,7 @@ using UnityEngine;
 public class AxeMeleeCombo1 : StateMachineBehaviour, IHitBoxResponder
 {
     HitBox hitBox;  //스크립트
-    public int damage = 1;
+    public int damage = 20;
     Dictionary<int, int> hitObject;
     Vector3 knuckBackDir;
 
@@ -14,8 +14,10 @@ public class AxeMeleeCombo1 : StateMachineBehaviour, IHitBoxResponder
         HurtBox hurtBox = collider.GetComponent<HurtBox>();
         if(null != hurtBox)
         {
+            Debug.Log(collider.name);
             hurtBox.GetHitBy(damage);
         }
+
         if (!hitObject.ContainsKey(collider.gameObject.GetInstanceID()))  //GetInstanceID , HashCode
             hitObject[collider.gameObject.GetInstanceID()] = 1;
         else

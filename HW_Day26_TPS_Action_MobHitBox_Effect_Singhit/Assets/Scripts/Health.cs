@@ -14,7 +14,8 @@ public class Health : MonoBehaviour {
         if(currentHealth <= 0f)
         {
             currentHealth = 0f;
-            print("쥬금");
+            print(gameObject.name + " 쥬금");
+            Destroy(gameObject);
         }
         healthBar.localScale = new Vector3(currentHealth / maxHealth, 1f, 1f);
     }
