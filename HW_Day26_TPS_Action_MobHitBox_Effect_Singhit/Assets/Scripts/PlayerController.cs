@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour {
         float mouseMoveX = Input.GetAxis("Mouse X");
         //float mouseMoveY = Input.GetAxis("Mouse Y");
 
+
         if (Input.GetMouseButton(1))
         {
             moveDirection = new Vector3(h, 0, v).normalized;

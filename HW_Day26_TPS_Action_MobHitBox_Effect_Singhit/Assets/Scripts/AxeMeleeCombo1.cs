@@ -6,6 +6,8 @@ public class AxeMeleeCombo1 : StateMachineBehaviour, IHitBoxResponder
 {
     HitBox hitBox;  //스크립트
     public int damage = 1;
+    Dictionary<int, int> hitObject;
+    Vector3 knuckBackDir;
 
     public void CollisionWith(Collider collider)
     {
@@ -14,6 +16,17 @@ public class AxeMeleeCombo1 : StateMachineBehaviour, IHitBoxResponder
         {
             hurtBox.GetHitBy(damage);
         }
+        if (!hitObject.ContainsKey(collider.gameObject.GetInstanceID()))  //GetInstanceID , HashCode
+            hitObject[collider.gameObject.GetInstanceID()] = 1;
+        else
+        {
+            hitObject[collider.gameObject.GetInstanceID()] += 1;        //몇방 맞았는지 궁금해서
+            return;
+        }
+
+            HitReaction hr = collider.GetComponent<HitReaction>();
+        if (hr != null)
+            hr.TakeDamage(damage, knuckBackDir);
     }
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -22,6 +35,8 @@ public class AxeMeleeCombo1 : StateMachineBehaviour, IHitBoxResponder
         hitBox = animator.GetComponent<PlayerController>().weaponHolder.GetComponentInChildren<HitBox>();   //HitBox 는 스크립트 이름
         hitBox.SetResponder(this);                                                                          //인터페이스가 포함되어 있는 클래스를 넘김
         hitBox.StartCheckingCollision();
+        hitObject = new Dictionary<int, int>(); //HeshTable Generic Version 자원소모 적음
+        knuckBackDir = animator.transform.forward;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -36,10 +51,10 @@ public class AxeMeleeCombo1 : StateMachineBehaviour, IHitBoxResponder
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        hitBox.StopCheckingCollision();
-    }
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    hitBox.StopCheckingCollision();
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

@@ -24,6 +24,8 @@ public class PickUpWeapon : StateMachineBehaviour {
             if (weapon == null)
                 return;
             //Destroy(weapon.GetComponent<Rigidbody>());
+            foreach (var c in weapon.GetComponents<Collider>())
+                c.enabled = false;
             weapon.transform.SetParent(weaponHolder.transform);
             weapon.transform.localPosition = Vector3.zero;
             weapon.transform.localRotation = Quaternion.identity;

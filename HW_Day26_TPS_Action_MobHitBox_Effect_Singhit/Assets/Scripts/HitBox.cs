@@ -58,12 +58,17 @@ public class HitBox : MonoBehaviour {
                                                   transform.rotation,
                                                   mask);
         
+        //for (int i = 0; i < colliders.Length; i++)
+        //{
+        //    Collider aCollider = colliders[i];
+        //    if (null != responder)
+        //        responder.CollisionWith(aCollider);
+        //}
+
         foreach (var aCollider in colliders)
-        {
+        { 
             if (null != responder)
-            {
-                responder.CollisionWith(aCollider);//Call Damage
-            }
+                responder.CollisionWith(aCollider);
         }
 
         state = colliders.Length > 0 ? ColliderState.Colliding : ColliderState.Open;

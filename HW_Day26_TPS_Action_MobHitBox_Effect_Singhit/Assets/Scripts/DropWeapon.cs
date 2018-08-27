@@ -33,6 +33,9 @@ public class DropWeapon : StateMachineBehaviour {
         Transform weapon = weaponHolder.GetChild(0);
         weapon.SetParent(null);
         weapon.GetComponent<Rigidbody>().isKinematic = false;
+        
+        foreach (var c in weapon.GetComponents<Collider>())
+            c.enabled = true;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
