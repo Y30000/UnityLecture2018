@@ -1,0 +1,1 @@
+Ctrl + Shift + Drag = 해당 면에 붙이기 (Center 조건 걸려야함)
