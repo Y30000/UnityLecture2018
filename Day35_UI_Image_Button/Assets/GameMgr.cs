@@ -8,7 +8,7 @@ public class GameMgr : MonoBehaviour {
 
     private void Start()
     {
-        startButton.onClick.AddListener(OnClick);
+        startButton.onClick.AddListener(() => print("clicked") );
     }
 
     public void OnClick()
