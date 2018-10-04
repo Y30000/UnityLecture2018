@@ -69,11 +69,11 @@ public class Jumping : MonoBehaviour {
     void Jump()
     {
         queuedJumpingForce = false;
-        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); //only y value
       //rb.velocity += Vector3.up * Mathf.Sqrt(jumpHeight * -2 * Physics.gravity.y); 같음
         if (!isGrounded)
             return;
 
+        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); //only y value
         rb.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2 * Physics.gravity.y), ForceMode.VelocityChange);
     }
 }

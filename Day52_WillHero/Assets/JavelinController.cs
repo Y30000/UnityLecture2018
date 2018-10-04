@@ -35,5 +35,13 @@ public class JavelinController : MonoBehaviour, IHitBoxResponder {
         DOTween.Kill(transform);
         transform.SetParent(collider.gameObject.transform);
         hitbox.StopCheckingCollision();
+
+        HurtBox hurtBox = collider.GetComponent<HurtBox>();
+        if (hurtBox != null)
+            hurtBox.GetHitBy(1);
+
+        HitReaction hr = collider.GetComponentInParent<HitReaction>();
+        if (hr != null)
+            hr.Beaten();
     }
 }

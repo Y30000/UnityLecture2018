@@ -6,6 +6,6 @@ public class ResetPlayerPosition : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.root.gameObject.CompareTag("Player"))
-            other.transform.root.position = new Vector3(-3, 2, 0);
+            other.transform.root.position = new Vector3(-3, 10, 0);
     }
 }
