@@ -21,19 +21,21 @@ public class PlayerController : NetworkBehaviour {
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Fire();
+            CmdFire();  //클라이언트 영역
         }
     }
 
-    private void Fire()
+    [Command]   //Cmd 붙어야 사용가능 // 서버에서만 실행하는 코드 //클리언트에서 동작(호출)하는데;;
+    private void CmdFire()
     {
         var bullet = Instantiate(bulletPrefab,
                                  bulletSpawn.position,
                                  bulletSpawn.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6f;
-        Destroy(bullet, 2f);
+        NetworkServer.Spawn(bullet);    //여기서 생성됨
+        Destroy(bullet, 2f);            //서버상에서 제거함 //서버에서 제거되면 클라이언트에서도 제거됨
     }
 
     public override void OnStartLocalPlayer()   //자신이 로컬일때만 출됨
