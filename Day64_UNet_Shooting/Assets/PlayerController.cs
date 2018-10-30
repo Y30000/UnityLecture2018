@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
+
 public class PlayerController : NetworkBehaviour {
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+
+    float tempTime = 0;
 
     private void Start()
     {
@@ -29,13 +32,14 @@ public class PlayerController : NetworkBehaviour {
         transform.Rotate(0, x, 0);
         transform.Translate(0, 0, z);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && tempTime < Time.time)
         {
+            tempTime = Time.time + .1f;
             CmdFire();  //클라이언트 영역
         }
     }
 
-    [Command]   //Cmd 붙어야 사용가능 // 서버에서만 실행하는 코드 //클리언트에서 동작(호출)하는데;;
+    [Command]   //Remote Procedure Call  원격 함수 호출   //Cmd 붙어야 사용가능 // 서버에서만 실행하는 코드 //클리언트에서 동작(호출)하는데;;
     private void CmdFire()
     {
         var bullet = Instantiate(bulletPrefab,
