@@ -1,0 +1,488 @@
+fileFormatVersion: 2
+guid: 970475392f7fad3428f10ee8de7c5802
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RockGolemAtlas_Demo_0
+    21300002: RockGolemAtlas_Demo_1
+    21300004: RockGolemAtlas_Demo_2
+    21300006: RockGolemAtlas_Demo_3
+    21300008: RockGolemAtlas_Demo_4
+    21300010: RockGolemAtlas_Demo_5
+    21300012: RockGolemAtlas_Demo_6
+    21300014: RockGolemAtlas_Demo_7
+    21300016: RockGolemAtlas_Demo_8
+    21300018: RockGolemAtlas_Demo_9
+    21300020: RockGolemAtlas_Demo_10
+    21300022: RockGolemAtlas_Demo_11
+    21300024: RockGolemAtlas_Demo_12
+    21300026: RockGolemAtlas_Demo_13
+    21300028: RockGolemAtlas_Demo_14
+    21300030: RockGolemAtlas_Demo_15
+    21300032: RockGolemAtlas_Demo_16
+    21300034: RockGolemAtlas_Demo_17
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_0
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 834
+        width: 315
+        height: 224
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977a890e420f97b4e8472482a6d614ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 918
+        width: 381
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c848e4e235dbe41a57df182387b757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_2
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 687
+        width: 586
+        height: 393
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5063613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdfc05b0d538b1a42b462e96ddfb9d99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_3
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 860
+        width: 217
+        height: 203
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5818316db13b514a88d265aec91c3c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_4
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 520
+        width: 254
+        height: 226
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5022124}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225b8aac2cb3ca24784b4c81a7c4452e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_5
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 704
+        width: 358
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e66d0184ffa1e14d9e1d8deba4c4988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_6
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 583
+        width: 230
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ff38e070dd53e4abb3a3421dcd6791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 560
+        width: 118
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681049e973a166b4286588026d2a7412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_8
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 464
+        width: 207
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b672387a7b22ef44fb58419993808f9c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_9
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 477
+        width: 169
+        height: 179
+      alignment: 9
+      pivot: {x: 0.5029586, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd47b721ea9b39644814f40cb4458663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_10
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 431
+        width: 215
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59054fc1dc879b241901aec794c0ec30
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_11
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 511
+        width: 4
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80233c315234da340afc336f6bf87918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_12
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 48.999985
+        width: 456
+        height: 419
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49761343}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4092da83e7c43e640bb0a583e54d87d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_13
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 251
+        width: 189
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf08e2f89883534eb3a4d8c833c21cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_14
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 268
+        width: 189
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9227a5c4fab9964d8f7c6e2fcb2d430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_15
+      rect:
+        serializedVersion: 2
+        x: 1476
+        y: 48
+        width: 405
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17edc94d59fadc4dbf80b697e3e055b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_16
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 32
+        width: 238
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df0ff306b699dc4094669fd5274a22f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RockGolemAtlas_Demo_17
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 32
+        width: 238
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06af25663d7386f48a70702ec6376d55
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f8a473ee3278d7a41a97284580c5f2bb
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 636778492934130427
+  assetBundleName: 
+  assetBundleVariant: 
