@@ -2,6 +2,9 @@ curl \
 --header "Content-Type: application/json" \
 --request POST \
 --data '{"email": "asdf@hjkl", "userName":"qwer", "nickName":"1234"}' \
-
 http://localhost:5334/user/add
-http://localhost:5334/users
+
+
+--header "" 뭘 올릴껀지 약속임
+--request POST 는 서버에 데이터를 업로드 하겠다는 뜻
+--data ' ' 실질적 데이터 해더에 올리기로 한 데이터의 형식을 따름

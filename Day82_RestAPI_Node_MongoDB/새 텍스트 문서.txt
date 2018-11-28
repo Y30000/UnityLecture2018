@@ -1,0 +1,5 @@
+curl \
+--request GET \
+http://localhost:5334/user/asdf@hjkl
+
+--request GET 데이터를 받기만 한다는 뜻
